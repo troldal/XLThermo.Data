@@ -1,8 +1,8 @@
 #==============================================================================
 # Preamble
 #==============================================================================
-cmake_minimum_required(VERSION 3.20)
-project(Xll.Template)
+cmake_minimum_required(VERSION 3.24)
+project(XLThermo.Data)
 
 #==============================================================================
 # Set compiler settings
@@ -11,22 +11,22 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 #==============================================================================
-# Add the Xll base library
+# Add the dependency (xll and PCData) libraries to the project
 #==============================================================================
-add_subdirectory(xll)
+add_subdirectory(deps)
 
 #==============================================================================
-# Add xll template library and set source file paths
+# Add XLThermo.Data library and set source file paths
 #==============================================================================
 add_library(
-        xlltemplate
+        XLThermoData
         SHARED
-        ${CMAKE_CURRENT_SOURCE_DIR}/xll_template.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/XLThermoData.cpp
 )
 
 #==============================================================================
 # Set Xll library properties and compile options
 #==============================================================================
-target_compile_options(xlltemplate PRIVATE "/J" "/utf-8")
-target_link_libraries(xlltemplate PRIVATE xlcall xll)
-set_target_properties(xlltemplate PROPERTIES OUTPUT_NAME "xll_template" SUFFIX ".xll")
+target_compile_options(XLThermoData PRIVATE "/J" "/utf-8")
+target_link_libraries(XLThermoData PRIVATE xll::xlcall xll::xll)
+set_target_properties(XLThermoData PROPERTIES OUTPUT_NAME "XLThermo.Data" SUFFIX ".xll")

@@ -1,0 +1,8 @@
+E:/Projects/XLThermo.Data/cmake-build-release-visual-studio/CMakeFiles/XLThermoData.dir
+E:/Projects/XLThermo.Data/cmake-build-release-visual-studio/CMakeFiles/edit_cache.dir
+E:/Projects/XLThermo.Data/cmake-build-release-visual-studio/CMakeFiles/rebuild_cache.dir
+E:/Projects/XLThermo.Data/cmake-build-release-visual-studio/deps/CMakeFiles/edit_cache.dir
+E:/Projects/XLThermo.Data/cmake-build-release-visual-studio/deps/CMakeFiles/rebuild_cache.dir
+E:/Projects/XLThermo.Data/cmake-build-release-visual-studio/deps/xll/CMakeFiles/xll.dir
+E:/Projects/XLThermo.Data/cmake-build-release-visual-studio/deps/xll/CMakeFiles/edit_cache.dir
+E:/Projects/XLThermo.Data/cmake-build-release-visual-studio/deps/xll/CMakeFiles/rebuild_cache.dir
