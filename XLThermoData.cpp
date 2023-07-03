@@ -36,59 +36,81 @@ SOFTWARE.
 // xll_template.cpp - Sample xll project.
 #include <cmath>    // for double tgamma(double)
 #include <xll.h>
+#include <iostream>
+#include <vector>
+#include <tuple>
+#include "XLThermoData.hpp"
 
 using namespace xll;
 
-AddIn xai_tgamma(
-    // Return double, C++ name of function, Excel name.
-    Function(XLL_DOUBLE, "xll_tgamma", "TROLDAL.TGAMMA")
-        // Array of function arguments.
-        .Arguments({ Arg(XLL_DOUBLE, "x", "is the value for which you want to calculate Gamma.") })
-        // Function Wizard help.
-        .FunctionHelp("Return the Gamma function value.")
-        // Function Wizard category.
-        .Category("MATH")
-        // URL linked to `Help on this function`.
-        .HelpTopic("https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/tgamma-tgammaf-tgammal")
-        .Documentation(R"xyzyx(
-The <i>Gamma</i> function is \(\Gamma(x) = \int_0^\infty t^{x - 1} e^{-t}\,dt\), \(x \ge 0\).
-If \(n\) is a natural number then \(\Gamma(n + 1) = n! = n(n - 1)\cdots 1\).
-<p>
-Any valid HTML using <a href="https://katex.org/" target="_blank">KaTeX</a> can 
-be used for documentation.
-)xyzyx"));
 // WINAPI calling convention must be specified
-double WINAPI xll_tgamma(double x)
+_FPX* WINAPI xll_tgamma(double x)
 {
 #pragma XLLEXPORT    // must be specified to export function
 
-    return tgamma(x);
+        static xll::FPX arr(2,2);
+        arr(0,0) = 3.14;
+        arr(0,1) = 2.71;
+        arr(1,0) = 1.41;
+        arr(1,1) = 1.61;
+
+        return arr.get();
 }
 
-// Press Alt-F8 then type 'XLL.MACRO' to call 'xll_macro'
-// See https://xlladdins.github.io/Excel4Macros/
-AddIn xai_macro(
-    // C++ function, Excel name of macro
-    Macro("xll_macro", "XLL.MACRO"));
+LPOPER WINAPI xll_tgamma2(double x)
+{
+#pragma XLLEXPORT    // must be specified to export function
+
+        auto components = std::vector<std::tuple<std::string, std::string, double>> {};
+        components.emplace_back("Water", "H2O", 1.0);
+        components.emplace_back("Ethanol", "C2H6O", 2.0);
+        components.emplace_back("Methane", "CH4", 3.0);
+        components.emplace_back("Propane", "C3H8", 4.0);
+
+        auto* rng   = new OPER(components.size(), 3);
+        rng->xltype = xltypeMulti | xlbitDLLFree;
+        for (size_t i = 0; i < components.size(); ++i)
+        {
+            (*rng)(i, 0) = std::get<0>(components[i]).c_str();
+            (*rng)(i, 1) = std::get<1>(components[i]).c_str();
+            (*rng)(i, 2) = std::get<2>(components[i]);
+        }
+
+
+//        auto* rng   = new OPER(2, 2);
+//        rng->xltype = xltypeMulti | xlbitDLLFree;
+//        (*rng)[0]   = OPER("Blah");
+//        (*rng)[1]   = OPER(2.0);
+//        (*rng)[2]   = OPER(3.0);
+//        (*rng)[3]   = OPER(4.0);
+
+        std::cerr << "xll_tgamma2 called with x = " << x << std::endl;
+
+        return rng;
+}
+
 // Macros must have `int WINAPI (*)(void)` signature.
-int WINAPI xll_macro(void)
+int WINAPI loadComponentList()
 {
 #pragma XLLEXPORT
     // https://xlladdins.github.io/Excel4Macros/reftext.html
     // A1 style instead of default R1C1.
-    OPER reftext = Excel(xlfReftext, Excel(xlfActiveCell), OPER(true));
+    // OPER reftext = Excel(xlfReftext, Excel(xlfActiveCell), OPER(true));
     // UTF-8 strings can be used.
-    Excel(xlcAlert, OPER("XLL.MACRO called with активный 细胞: ") & reftext);
+    // Excel(xlcAlert, OPER("XLL.MACRO called with активный 细胞: ") & reftext);
+
+    static auto rng = OPER(xltypeMulti);
+    rng.xltype      = xltypeMulti | xlbitDLLFree;
+    rng.resize(2, 2);
+    rng(0, 0) = "Blah";
+    rng(0, 1) = 2.0;
+    rng(1, 0) = 3.0;
+    rng(1, 1) = 4.0;
+
+    auto ref = Excel(xlfActiveCell);
+    ref.val.sref.ref.colLast = ref.val.sref.ref.colFirst + 1;
+    ref.val.sref.ref.rwLast = ref.val.sref.ref.rwFirst + 1;
+    Excel(xlSet, ref, rng);
 
     return TRUE;
 }
-
-#ifdef _DEBUG
-
-// Create XML documentation and index.html in `$(TargetPath)` folder.
-// Use `xsltproc file.xml -o file.html` to create HTML documentation.
-Auto<Open> xao_template_docs([]() {
-    return Documentation("MATH", "Documentation for the xll_template add-in.");
-});
-
-#endif    // _DEBUG

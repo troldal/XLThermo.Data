@@ -13,7 +13,7 @@ namespace xll {
         // add-ins indexed by Excel name
         static inline std::map<OPER, Args> Map;
  
-        AddIn(const Args& args) noexcept
+        explicit AddIn(const Args& args) noexcept
         {
             const OPER& key = args.FunctionText();
             auto i = Map.insert_or_assign(key, args);

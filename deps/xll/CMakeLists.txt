@@ -52,5 +52,5 @@ add_library(xll::xll ALIAS xll)
 # Set Xll library properties and compile options
 #==============================================================================
 target_compile_definitions(xll PRIVATE -DUNICODE -D_UNICODE)
-target_compile_options(xll PRIVATE "/J" "/utf-8")
+target_compile_options(xll PRIVATE "/J" "/utf-8" )
 target_include_directories(xll PUBLIC ${CMAKE_CURRENT_LIST_DIR}/xll)
