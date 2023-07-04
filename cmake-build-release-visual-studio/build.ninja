@@ -47,12 +47,12 @@ cmake_ninja_workdir = E$:\Projects\XLThermo.Data\cmake-build-release-visual-stud
 #############################################
 # Order-only phony target for XLThermoData
 
-build cmake_object_order_depends_target_XLThermoData: phony || cmake_object_order_depends_target_xll
+build cmake_object_order_depends_target_XLThermoData: phony || cmake_object_order_depends_target_PCDataLib cmake_object_order_depends_target_pugixml-static cmake_object_order_depends_target_xll
 
 build CMakeFiles\XLThermoData.dir\XLThermoData.cpp.obj: CXX_COMPILER__XLThermoData_Release E$:\Projects\XLThermo.Data\XLThermoData.cpp || cmake_object_order_depends_target_XLThermoData
   DEFINES = -DXLThermoData_EXPORTS
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -MD /J /utf-8 -std:c++20
-  INCLUDES = -IE:\Projects\XLThermo.Data\cmake-build-release-visual-studio -IE:\Projects\XLThermo.Data\deps\xll\xll
+  INCLUDES = -IE:\Projects\XLThermo.Data\cmake-build-release-visual-studio -IE:\Projects\XLThermo.Data\deps\xll\xll -IE:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\json-src\include -external:IE:\Projects\PCData\PCData -external:W0
   OBJECT_DIR = CMakeFiles\XLThermoData.dir
   OBJECT_FILE_DIR = CMakeFiles\XLThermoData.dir
   TARGET_COMPILE_PDB = CMakeFiles\XLThermoData.dir\
@@ -66,10 +66,10 @@ build CMakeFiles\XLThermoData.dir\XLThermoData.cpp.obj: CXX_COMPILER__XLThermoDa
 #############################################
 # Link the shared library XLThermo.Data.xll
 
-build XLThermo.Data.xll XLThermo.Data.lib: CXX_SHARED_LIBRARY_LINKER__XLThermoData_Release CMakeFiles\XLThermoData.dir\XLThermoData.cpp.obj | E$:\Projects\XLThermo.Data\deps\xll\xll\x64\XLCALL32.LIB deps\xll\xll.lib || deps\xll\xll.lib
+build XLThermo.Data.xll XLThermo.Data.lib: CXX_SHARED_LIBRARY_LINKER__XLThermoData_Release CMakeFiles\XLThermoData.dir\XLThermoData.cpp.obj | E$:\Projects\XLThermo.Data\deps\xll\xll\x64\XLCALL32.LIB deps\xll\xll.lib _deps\pcdata-build\PCData\PCDataLib.lib _deps\pugi-build\pugixml.lib || _deps\pcdata-build\PCData\PCDataLib.lib _deps\pugi-build\pugixml.lib deps\xll\xll.lib
   LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -MD
   LINK_FLAGS = /machine:x64 /INCREMENTAL:NO
-  LINK_LIBRARIES = E:\Projects\XLThermo.Data\deps\xll\xll\x64\XLCALL32.LIB  deps\xll\xll.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  LINK_LIBRARIES = E:\Projects\XLThermo.Data\deps\xll\xll\x64\XLCALL32.LIB  deps\xll\xll.lib  _deps\pcdata-build\PCData\PCDataLib.lib  _deps\pugi-build\pugixml.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
   OBJECT_DIR = CMakeFiles\XLThermoData.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -102,6 +102,883 @@ build CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
 
 build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 
+
+#############################################
+# Utility command for list_install_components
+
+build list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build CMakeFiles\install.util: CUSTOM_COMMAND all
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build install: phony CMakeFiles\install.util
+
+
+#############################################
+# Utility command for install/local
+
+build CMakeFiles\install\local.util: CUSTOM_COMMAND all
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build install\local: phony CMakeFiles\install\local.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# E:/Projects/XLThermo.Data/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps\pcdata-build\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pcdata-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps\pcdata-build\edit_cache: phony _deps\pcdata-build\CMakeFiles\edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps\pcdata-build\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pcdata-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SE:\Projects\XLThermo.Data -BE:\Projects\XLThermo.Data\cmake-build-release-visual-studio"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps\pcdata-build\rebuild_cache: phony _deps\pcdata-build\CMakeFiles\rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps\pcdata-build\list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps\pcdata-build\CMakeFiles\install.util: CUSTOM_COMMAND _deps\pcdata-build\all
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pcdata-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps\pcdata-build\install: phony _deps\pcdata-build\CMakeFiles\install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps\pcdata-build\CMakeFiles\install\local.util: CUSTOM_COMMAND _deps\pcdata-build\all
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pcdata-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps\pcdata-build\install\local: phony _deps\pcdata-build\CMakeFiles\install\local.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# E:/Projects/PCData/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target PCDataLib
+
+
+#############################################
+# Order-only phony target for PCDataLib
+
+build cmake_object_order_depends_target_PCDataLib: phony || cmake_object_order_depends_target_pugixml-static
+
+build _deps\pcdata-build\PCData\CMakeFiles\PCDataLib.dir\PCData.cpp.obj: CXX_COMPILER__PCDataLib_Release E$:\Projects\PCData\PCData\PCData.cpp || cmake_object_order_depends_target_PCDataLib
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -MD -std:c++20
+  INCLUDES = -IE:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-src\src -IE:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\json-src\include -external:IE:\Projects\PCData\PCData -external:IE:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\etl-src\include -external:W0
+  OBJECT_DIR = _deps\pcdata-build\PCData\CMakeFiles\PCDataLib.dir
+  OBJECT_FILE_DIR = _deps\pcdata-build\PCData\CMakeFiles\PCDataLib.dir
+  TARGET_COMPILE_PDB = _deps\pcdata-build\PCData\CMakeFiles\PCDataLib.dir\PCDataLib.pdb
+  TARGET_PDB = _deps\pcdata-build\PCData\PCDataLib.pdb
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target PCDataLib
+
+
+#############################################
+# Link the static library _deps\pcdata-build\PCData\PCDataLib.lib
+
+build _deps\pcdata-build\PCData\PCDataLib.lib: CXX_STATIC_LIBRARY_LINKER__PCDataLib_Release _deps\pcdata-build\PCData\CMakeFiles\PCDataLib.dir\PCData.cpp.obj || _deps\pugi-build\pugixml.lib
+  LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -MD
+  LINK_FLAGS = /machine:x64
+  OBJECT_DIR = _deps\pcdata-build\PCData\CMakeFiles\PCDataLib.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = _deps\pcdata-build\PCData\CMakeFiles\PCDataLib.dir\PCDataLib.pdb
+  TARGET_FILE = _deps\pcdata-build\PCData\PCDataLib.lib
+  TARGET_PDB = _deps\pcdata-build\PCData\PCDataLib.pdb
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps\pcdata-build\PCData\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pcdata-build\PCData && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps\pcdata-build\PCData\edit_cache: phony _deps\pcdata-build\PCData\CMakeFiles\edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps\pcdata-build\PCData\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pcdata-build\PCData && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SE:\Projects\XLThermo.Data -BE:\Projects\XLThermo.Data\cmake-build-release-visual-studio"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps\pcdata-build\PCData\rebuild_cache: phony _deps\pcdata-build\PCData\CMakeFiles\rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps\pcdata-build\PCData\list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps\pcdata-build\PCData\CMakeFiles\install.util: CUSTOM_COMMAND _deps\pcdata-build\PCData\all
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pcdata-build\PCData && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps\pcdata-build\PCData\install: phony _deps\pcdata-build\PCData\CMakeFiles\install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps\pcdata-build\PCData\CMakeFiles\install\local.util: CUSTOM_COMMAND _deps\pcdata-build\PCData\all
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pcdata-build\PCData && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps\pcdata-build\PCData\install\local: phony _deps\pcdata-build\PCData\CMakeFiles\install\local.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# E:/Projects/PCData/PCData/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for Experimental
+
+build _deps\pugi-build\Experimental: phony _deps\pugi-build\CMakeFiles\Experimental
+
+
+#############################################
+# Utility command for Nightly
+
+build _deps\pugi-build\Nightly: phony _deps\pugi-build\CMakeFiles\Nightly
+
+
+#############################################
+# Utility command for Continuous
+
+build _deps\pugi-build\Continuous: phony _deps\pugi-build\CMakeFiles\Continuous
+
+
+#############################################
+# Utility command for NightlyMemoryCheck
+
+build _deps\pugi-build\NightlyMemoryCheck: phony _deps\pugi-build\CMakeFiles\NightlyMemoryCheck
+
+
+#############################################
+# Utility command for NightlyStart
+
+build _deps\pugi-build\NightlyStart: phony _deps\pugi-build\CMakeFiles\NightlyStart
+
+
+#############################################
+# Utility command for NightlyUpdate
+
+build _deps\pugi-build\NightlyUpdate: phony _deps\pugi-build\CMakeFiles\NightlyUpdate
+
+
+#############################################
+# Utility command for NightlyConfigure
+
+build _deps\pugi-build\NightlyConfigure: phony _deps\pugi-build\CMakeFiles\NightlyConfigure
+
+
+#############################################
+# Utility command for NightlyBuild
+
+build _deps\pugi-build\NightlyBuild: phony _deps\pugi-build\CMakeFiles\NightlyBuild
+
+
+#############################################
+# Utility command for NightlyTest
+
+build _deps\pugi-build\NightlyTest: phony _deps\pugi-build\CMakeFiles\NightlyTest
+
+
+#############################################
+# Utility command for NightlyCoverage
+
+build _deps\pugi-build\NightlyCoverage: phony _deps\pugi-build\CMakeFiles\NightlyCoverage
+
+
+#############################################
+# Utility command for NightlyMemCheck
+
+build _deps\pugi-build\NightlyMemCheck: phony _deps\pugi-build\CMakeFiles\NightlyMemCheck
+
+
+#############################################
+# Utility command for NightlySubmit
+
+build _deps\pugi-build\NightlySubmit: phony _deps\pugi-build\CMakeFiles\NightlySubmit
+
+
+#############################################
+# Utility command for ExperimentalStart
+
+build _deps\pugi-build\ExperimentalStart: phony _deps\pugi-build\CMakeFiles\ExperimentalStart
+
+
+#############################################
+# Utility command for ExperimentalUpdate
+
+build _deps\pugi-build\ExperimentalUpdate: phony _deps\pugi-build\CMakeFiles\ExperimentalUpdate
+
+
+#############################################
+# Utility command for ExperimentalConfigure
+
+build _deps\pugi-build\ExperimentalConfigure: phony _deps\pugi-build\CMakeFiles\ExperimentalConfigure
+
+
+#############################################
+# Utility command for ExperimentalBuild
+
+build _deps\pugi-build\ExperimentalBuild: phony _deps\pugi-build\CMakeFiles\ExperimentalBuild
+
+
+#############################################
+# Utility command for ExperimentalTest
+
+build _deps\pugi-build\ExperimentalTest: phony _deps\pugi-build\CMakeFiles\ExperimentalTest
+
+
+#############################################
+# Utility command for ExperimentalCoverage
+
+build _deps\pugi-build\ExperimentalCoverage: phony _deps\pugi-build\CMakeFiles\ExperimentalCoverage
+
+
+#############################################
+# Utility command for ExperimentalMemCheck
+
+build _deps\pugi-build\ExperimentalMemCheck: phony _deps\pugi-build\CMakeFiles\ExperimentalMemCheck
+
+
+#############################################
+# Utility command for ExperimentalSubmit
+
+build _deps\pugi-build\ExperimentalSubmit: phony _deps\pugi-build\CMakeFiles\ExperimentalSubmit
+
+
+#############################################
+# Utility command for ContinuousStart
+
+build _deps\pugi-build\ContinuousStart: phony _deps\pugi-build\CMakeFiles\ContinuousStart
+
+
+#############################################
+# Utility command for ContinuousUpdate
+
+build _deps\pugi-build\ContinuousUpdate: phony _deps\pugi-build\CMakeFiles\ContinuousUpdate
+
+
+#############################################
+# Utility command for ContinuousConfigure
+
+build _deps\pugi-build\ContinuousConfigure: phony _deps\pugi-build\CMakeFiles\ContinuousConfigure
+
+
+#############################################
+# Utility command for ContinuousBuild
+
+build _deps\pugi-build\ContinuousBuild: phony _deps\pugi-build\CMakeFiles\ContinuousBuild
+
+
+#############################################
+# Utility command for ContinuousTest
+
+build _deps\pugi-build\ContinuousTest: phony _deps\pugi-build\CMakeFiles\ContinuousTest
+
+
+#############################################
+# Utility command for ContinuousCoverage
+
+build _deps\pugi-build\ContinuousCoverage: phony _deps\pugi-build\CMakeFiles\ContinuousCoverage
+
+
+#############################################
+# Utility command for ContinuousMemCheck
+
+build _deps\pugi-build\ContinuousMemCheck: phony _deps\pugi-build\CMakeFiles\ContinuousMemCheck
+
+
+#############################################
+# Utility command for ContinuousSubmit
+
+build _deps\pugi-build\ContinuousSubmit: phony _deps\pugi-build\CMakeFiles\ContinuousSubmit
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target pugixml-static
+
+
+#############################################
+# Order-only phony target for pugixml-static
+
+build cmake_object_order_depends_target_pugixml-static: phony || _deps\pugi-build\CMakeFiles\pugixml-static.dir
+
+build _deps\pugi-build\CMakeFiles\pugixml-static.dir\src\pugixml.cpp.obj: CXX_COMPILER__pugixml-static_Release E$:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-src\src\pugixml.cpp || cmake_object_order_depends_target_pugixml-static
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -MD -std:c++20
+  INCLUDES = -IE:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-src\src
+  OBJECT_DIR = _deps\pugi-build\CMakeFiles\pugixml-static.dir
+  OBJECT_FILE_DIR = _deps\pugi-build\CMakeFiles\pugixml-static.dir\src
+  TARGET_COMPILE_PDB = _deps\pugi-build\CMakeFiles\pugixml-static.dir\pugixml-static.pdb
+  TARGET_PDB = _deps\pugi-build\pugixml.pdb
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target pugixml-static
+
+
+#############################################
+# Link the static library _deps\pugi-build\pugixml.lib
+
+build _deps\pugi-build\pugixml.lib: CXX_STATIC_LIBRARY_LINKER__pugixml-static_Release _deps\pugi-build\CMakeFiles\pugixml-static.dir\src\pugixml.cpp.obj
+  LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -MD
+  LINK_FLAGS = /machine:x64
+  OBJECT_DIR = _deps\pugi-build\CMakeFiles\pugixml-static.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = _deps\pugi-build\CMakeFiles\pugixml-static.dir\pugixml-static.pdb
+  TARGET_FILE = _deps\pugi-build\pugixml.lib
+  TARGET_PDB = _deps\pugi-build\pugixml.pdb
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps\pugi-build\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps\pugi-build\edit_cache: phony _deps\pugi-build\CMakeFiles\edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps\pugi-build\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SE:\Projects\XLThermo.Data -BE:\Projects\XLThermo.Data\cmake-build-release-visual-studio"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps\pugi-build\rebuild_cache: phony _deps\pugi-build\CMakeFiles\rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps\pugi-build\list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps\pugi-build\CMakeFiles\install.util: CUSTOM_COMMAND _deps\pugi-build\all
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps\pugi-build\install: phony _deps\pugi-build\CMakeFiles\install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps\pugi-build\CMakeFiles\install\local.util: CUSTOM_COMMAND _deps\pugi-build\all
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps\pugi-build\install\local: phony _deps\pugi-build\CMakeFiles\install\local.util
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\Experimental
+
+build _deps\pugi-build\CMakeFiles\Experimental | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\Experimental: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D Experimental"
+  pool = console
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\Nightly
+
+build _deps\pugi-build\CMakeFiles\Nightly | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\Nightly: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D Nightly"
+  pool = console
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\Continuous
+
+build _deps\pugi-build\CMakeFiles\Continuous | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\Continuous: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D Continuous"
+  pool = console
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\NightlyMemoryCheck
+
+build _deps\pugi-build\CMakeFiles\NightlyMemoryCheck | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\NightlyMemoryCheck: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D NightlyMemoryCheck"
+  pool = console
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\NightlyStart
+
+build _deps\pugi-build\CMakeFiles\NightlyStart | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\NightlyStart: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D NightlyStart"
+  pool = console
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\NightlyUpdate
+
+build _deps\pugi-build\CMakeFiles\NightlyUpdate | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\NightlyUpdate: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D NightlyUpdate"
+  pool = console
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\NightlyConfigure
+
+build _deps\pugi-build\CMakeFiles\NightlyConfigure | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\NightlyConfigure: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D NightlyConfigure"
+  pool = console
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\NightlyBuild
+
+build _deps\pugi-build\CMakeFiles\NightlyBuild | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\NightlyBuild: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D NightlyBuild"
+  pool = console
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\NightlyTest
+
+build _deps\pugi-build\CMakeFiles\NightlyTest | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\NightlyTest: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D NightlyTest"
+  pool = console
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\NightlyCoverage
+
+build _deps\pugi-build\CMakeFiles\NightlyCoverage | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\NightlyCoverage: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D NightlyCoverage"
+  pool = console
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\NightlyMemCheck
+
+build _deps\pugi-build\CMakeFiles\NightlyMemCheck | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\NightlyMemCheck: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D NightlyMemCheck"
+  pool = console
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\NightlySubmit
+
+build _deps\pugi-build\CMakeFiles\NightlySubmit | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\NightlySubmit: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D NightlySubmit"
+  pool = console
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\ExperimentalStart
+
+build _deps\pugi-build\CMakeFiles\ExperimentalStart | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\ExperimentalStart: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D ExperimentalStart"
+  pool = console
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\ExperimentalUpdate
+
+build _deps\pugi-build\CMakeFiles\ExperimentalUpdate | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\ExperimentalUpdate: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D ExperimentalUpdate"
+  pool = console
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\ExperimentalConfigure
+
+build _deps\pugi-build\CMakeFiles\ExperimentalConfigure | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\ExperimentalConfigure: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D ExperimentalConfigure"
+  pool = console
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\ExperimentalBuild
+
+build _deps\pugi-build\CMakeFiles\ExperimentalBuild | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\ExperimentalBuild: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D ExperimentalBuild"
+  pool = console
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\ExperimentalTest
+
+build _deps\pugi-build\CMakeFiles\ExperimentalTest | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\ExperimentalTest: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D ExperimentalTest"
+  pool = console
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\ExperimentalCoverage
+
+build _deps\pugi-build\CMakeFiles\ExperimentalCoverage | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\ExperimentalCoverage: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D ExperimentalCoverage"
+  pool = console
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\ExperimentalMemCheck
+
+build _deps\pugi-build\CMakeFiles\ExperimentalMemCheck | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\ExperimentalMemCheck: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D ExperimentalMemCheck"
+  pool = console
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\ExperimentalSubmit
+
+build _deps\pugi-build\CMakeFiles\ExperimentalSubmit | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\ExperimentalSubmit: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D ExperimentalSubmit"
+  pool = console
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\ContinuousStart
+
+build _deps\pugi-build\CMakeFiles\ContinuousStart | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\ContinuousStart: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D ContinuousStart"
+  pool = console
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\ContinuousUpdate
+
+build _deps\pugi-build\CMakeFiles\ContinuousUpdate | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\ContinuousUpdate: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D ContinuousUpdate"
+  pool = console
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\ContinuousConfigure
+
+build _deps\pugi-build\CMakeFiles\ContinuousConfigure | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\ContinuousConfigure: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D ContinuousConfigure"
+  pool = console
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\ContinuousBuild
+
+build _deps\pugi-build\CMakeFiles\ContinuousBuild | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\ContinuousBuild: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D ContinuousBuild"
+  pool = console
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\ContinuousTest
+
+build _deps\pugi-build\CMakeFiles\ContinuousTest | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\ContinuousTest: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D ContinuousTest"
+  pool = console
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\ContinuousCoverage
+
+build _deps\pugi-build\CMakeFiles\ContinuousCoverage | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\ContinuousCoverage: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D ContinuousCoverage"
+  pool = console
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\ContinuousMemCheck
+
+build _deps\pugi-build\CMakeFiles\ContinuousMemCheck | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\ContinuousMemCheck: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D ContinuousMemCheck"
+  pool = console
+
+
+#############################################
+# Custom command for _deps\pugi-build\CMakeFiles\ContinuousSubmit
+
+build _deps\pugi-build\CMakeFiles\ContinuousSubmit | ${cmake_ninja_workdir}_deps\pugi-build\CMakeFiles\ContinuousSubmit: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pugi-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\ctest.exe -D ContinuousSubmit"
+  pool = console
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# E:/Projects/PCData/PCData/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps\json-build\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\json-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps\json-build\edit_cache: phony _deps\json-build\CMakeFiles\edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps\json-build\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\json-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SE:\Projects\XLThermo.Data -BE:\Projects\XLThermo.Data\cmake-build-release-visual-studio"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps\json-build\rebuild_cache: phony _deps\json-build\CMakeFiles\rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps\json-build\list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps\json-build\CMakeFiles\install.util: CUSTOM_COMMAND _deps\json-build\all
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\json-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps\json-build\install: phony _deps\json-build\CMakeFiles\install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps\json-build\CMakeFiles\install\local.util: CUSTOM_COMMAND _deps\json-build\all
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\json-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps\json-build\install\local: phony _deps\json-build\CMakeFiles\install\local.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# E:/Projects/PCData/PCData/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps\etl-build\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\etl-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps\etl-build\edit_cache: phony _deps\etl-build\CMakeFiles\edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps\etl-build\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\etl-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SE:\Projects\XLThermo.Data -BE:\Projects\XLThermo.Data\cmake-build-release-visual-studio"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps\etl-build\rebuild_cache: phony _deps\etl-build\CMakeFiles\rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps\etl-build\list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps\etl-build\CMakeFiles\install.util: CUSTOM_COMMAND _deps\etl-build\all
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\etl-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps\etl-build\install: phony _deps\etl-build\CMakeFiles\install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps\etl-build\CMakeFiles\install\local.util: CUSTOM_COMMAND _deps\etl-build\all
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\etl-build && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps\etl-build\install\local: phony _deps\etl-build\CMakeFiles\install\local.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# E:/Projects/PCData/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target demo
+
+
+#############################################
+# Order-only phony target for demo
+
+build cmake_object_order_depends_target_demo: phony || cmake_object_order_depends_target_PCDataLib cmake_object_order_depends_target_pugixml-static
+
+build _deps\pcdata-build\demo\CMakeFiles\demo.dir\demo.cpp.obj: CXX_COMPILER__demo_Release E$:\Projects\PCData\demo\demo.cpp || cmake_object_order_depends_target_demo
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -MD -std:c++20
+  INCLUDES = -external:IE:\Projects\PCData\PCData -external:W0
+  OBJECT_DIR = _deps\pcdata-build\demo\CMakeFiles\demo.dir
+  OBJECT_FILE_DIR = _deps\pcdata-build\demo\CMakeFiles\demo.dir
+  TARGET_COMPILE_PDB = _deps\pcdata-build\demo\CMakeFiles\demo.dir\
+  TARGET_PDB = _deps\pcdata-build\demo\demo.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target demo
+
+
+#############################################
+# Link the executable _deps\pcdata-build\demo\demo.exe
+
+build _deps\pcdata-build\demo\demo.exe: CXX_EXECUTABLE_LINKER__demo_Release _deps\pcdata-build\demo\CMakeFiles\demo.dir\demo.cpp.obj | _deps\pcdata-build\PCData\PCDataLib.lib _deps\pugi-build\pugixml.lib || _deps\pcdata-build\PCData\PCDataLib.lib _deps\pugi-build\pugixml.lib
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -MD
+  LINK_FLAGS = /machine:x64 /INCREMENTAL:NO /subsystem:console
+  LINK_LIBRARIES = _deps\pcdata-build\PCData\PCDataLib.lib  _deps\pugi-build\pugixml.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  OBJECT_DIR = _deps\pcdata-build\demo\CMakeFiles\demo.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = _deps\pcdata-build\demo\CMakeFiles\demo.dir\
+  TARGET_FILE = _deps\pcdata-build\demo\demo.exe
+  TARGET_IMPLIB = _deps\pcdata-build\demo\demo.lib
+  TARGET_PDB = _deps\pcdata-build\demo\demo.pdb
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps\pcdata-build\demo\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pcdata-build\demo && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps\pcdata-build\demo\edit_cache: phony _deps\pcdata-build\demo\CMakeFiles\edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps\pcdata-build\demo\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pcdata-build\demo && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SE:\Projects\XLThermo.Data -BE:\Projects\XLThermo.Data\cmake-build-release-visual-studio"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps\pcdata-build\demo\rebuild_cache: phony _deps\pcdata-build\demo\CMakeFiles\rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps\pcdata-build\demo\list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps\pcdata-build\demo\CMakeFiles\install.util: CUSTOM_COMMAND _deps\pcdata-build\demo\all
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pcdata-build\demo && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps\pcdata-build\demo\install: phony _deps\pcdata-build\demo\CMakeFiles\install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps\pcdata-build\demo\CMakeFiles\install\local.util: CUSTOM_COMMAND _deps\pcdata-build\demo\all
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\pcdata-build\demo && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps\pcdata-build\demo\install\local: phony _deps\pcdata-build\demo\CMakeFiles\install\local.util
+
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
 # E:/Projects/XLThermo.Data/CMakeLists.txt
@@ -129,6 +1006,36 @@ build deps\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
   restat = 1
 
 build deps\rebuild_cache: phony deps\CMakeFiles\rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build deps\list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build deps\CMakeFiles\install.util: CUSTOM_COMMAND deps\all
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\deps && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build deps\install: phony deps\CMakeFiles\install.util
+
+
+#############################################
+# Utility command for install/local
+
+build deps\CMakeFiles\install\local.util: CUSTOM_COMMAND deps\all
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\deps && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build deps\install\local: phony deps\CMakeFiles\install\local.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
@@ -302,10 +1209,108 @@ build deps\xll\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
 
 build deps\xll\rebuild_cache: phony deps\xll\CMakeFiles\rebuild_cache.util
 
+
+#############################################
+# Utility command for list_install_components
+
+build deps\xll\list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build deps\xll\CMakeFiles\install.util: CUSTOM_COMMAND deps\xll\all
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\deps\xll && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build deps\xll\install: phony deps\xll\CMakeFiles\install.util
+
+
+#############################################
+# Utility command for install/local
+
+build deps\xll\CMakeFiles\install\local.util: CUSTOM_COMMAND deps\xll\all
+  COMMAND = cmd.exe /C "cd /D E:\Projects\XLThermo.Data\cmake-build-release-visual-studio\deps\xll && C:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build deps\xll\install\local: phony deps\xll\CMakeFiles\install\local.util
+
 # =============================================================================
 # Target aliases.
 
+build Continuous: phony _deps\pugi-build\Continuous
+
+build ContinuousBuild: phony _deps\pugi-build\ContinuousBuild
+
+build ContinuousConfigure: phony _deps\pugi-build\ContinuousConfigure
+
+build ContinuousCoverage: phony _deps\pugi-build\ContinuousCoverage
+
+build ContinuousMemCheck: phony _deps\pugi-build\ContinuousMemCheck
+
+build ContinuousStart: phony _deps\pugi-build\ContinuousStart
+
+build ContinuousSubmit: phony _deps\pugi-build\ContinuousSubmit
+
+build ContinuousTest: phony _deps\pugi-build\ContinuousTest
+
+build ContinuousUpdate: phony _deps\pugi-build\ContinuousUpdate
+
+build Experimental: phony _deps\pugi-build\Experimental
+
+build ExperimentalBuild: phony _deps\pugi-build\ExperimentalBuild
+
+build ExperimentalConfigure: phony _deps\pugi-build\ExperimentalConfigure
+
+build ExperimentalCoverage: phony _deps\pugi-build\ExperimentalCoverage
+
+build ExperimentalMemCheck: phony _deps\pugi-build\ExperimentalMemCheck
+
+build ExperimentalStart: phony _deps\pugi-build\ExperimentalStart
+
+build ExperimentalSubmit: phony _deps\pugi-build\ExperimentalSubmit
+
+build ExperimentalTest: phony _deps\pugi-build\ExperimentalTest
+
+build ExperimentalUpdate: phony _deps\pugi-build\ExperimentalUpdate
+
+build Nightly: phony _deps\pugi-build\Nightly
+
+build NightlyBuild: phony _deps\pugi-build\NightlyBuild
+
+build NightlyConfigure: phony _deps\pugi-build\NightlyConfigure
+
+build NightlyCoverage: phony _deps\pugi-build\NightlyCoverage
+
+build NightlyMemCheck: phony _deps\pugi-build\NightlyMemCheck
+
+build NightlyMemoryCheck: phony _deps\pugi-build\NightlyMemoryCheck
+
+build NightlyStart: phony _deps\pugi-build\NightlyStart
+
+build NightlySubmit: phony _deps\pugi-build\NightlySubmit
+
+build NightlyTest: phony _deps\pugi-build\NightlyTest
+
+build NightlyUpdate: phony _deps\pugi-build\NightlyUpdate
+
+build PCDataLib: phony _deps\pcdata-build\PCData\PCDataLib.lib
+
+build PCDataLib.lib: phony _deps\pcdata-build\PCData\PCDataLib.lib
+
 build XLThermoData: phony XLThermo.Data.xll
+
+build demo: phony _deps\pcdata-build\demo\demo.exe
+
+build demo.exe: phony _deps\pcdata-build\demo\demo.exe
+
+build pugixml-static: phony _deps\pugi-build\pugixml.lib
+
+build pugixml.lib: phony _deps\pugi-build\pugixml.lib
 
 build xll: phony deps\xll\xll.lib
 
@@ -319,7 +1324,49 @@ build xll.lib: phony deps\xll\xll.lib
 #############################################
 # Folder: E:/Projects/XLThermo.Data/cmake-build-release-visual-studio
 
-build all: phony XLThermo.Data.xll deps\all
+build all: phony XLThermo.Data.xll _deps\pugi-build\pugixml.lib _deps\pcdata-build\all deps\all
+
+# =============================================================================
+
+#############################################
+# Folder: E:/Projects/XLThermo.Data/cmake-build-release-visual-studio/_deps/etl-build
+
+build _deps\etl-build\all: phony
+
+# =============================================================================
+
+#############################################
+# Folder: E:/Projects/XLThermo.Data/cmake-build-release-visual-studio/_deps/json-build
+
+build _deps\json-build\all: phony
+
+# =============================================================================
+
+#############################################
+# Folder: E:/Projects/XLThermo.Data/cmake-build-release-visual-studio/_deps/pcdata-build
+
+build _deps\pcdata-build\all: phony _deps\pugi-build\pugixml.lib _deps\pcdata-build\PCData\all _deps\pcdata-build\demo\all
+
+# =============================================================================
+
+#############################################
+# Folder: E:/Projects/XLThermo.Data/cmake-build-release-visual-studio/_deps/pcdata-build/PCData
+
+build _deps\pcdata-build\PCData\all: phony _deps\pcdata-build\PCData\PCDataLib.lib _deps\pugi-build\pugixml.lib _deps\pugi-build\all _deps\json-build\all _deps\etl-build\all
+
+# =============================================================================
+
+#############################################
+# Folder: E:/Projects/XLThermo.Data/cmake-build-release-visual-studio/_deps/pcdata-build/demo
+
+build _deps\pcdata-build\demo\all: phony _deps\pcdata-build\demo\demo.exe
+
+# =============================================================================
+
+#############################################
+# Folder: E:/Projects/XLThermo.Data/cmake-build-release-visual-studio/_deps/pugi-build
+
+build _deps\pugi-build\all: phony _deps\pugi-build\pugixml.lib
 
 # =============================================================================
 
@@ -342,14 +1389,14 @@ build deps\xll\all: phony deps\xll\xll.lib
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeCCompiler.cmake.in C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeCCompilerABI.c C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeCInformation.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeCXXCompiler.cmake.in C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeCXXCompilerABI.cpp C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeCXXInformation.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeCommonLanguageInclude.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeCompilerIdDetection.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeDetermineCCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeDetermineCXXCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeDetermineCompileFeatures.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeDetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeDetermineCompilerABI.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeDetermineCompilerId.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeDetermineRCCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeDetermineSystem.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeFindBinUtils.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeGenericSystem.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeInitializeConfigs.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeLanguageInformation.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeParseImplicitIncludeInfo.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeParseImplicitLinkInfo.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeParseLibraryArchitecture.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeRCCompiler.cmake.in C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeRCInformation.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeSystem.cmake.in C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeSystemSpecificInformation.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeSystemSpecificInitialize.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeTestCCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeTestCXXCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeTestCompilerCommon.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeTestRCCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\ADSP-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\ARMCC-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\ARMClang-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\AppleClang-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\Borland-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\Bruce-C-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\Clang-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\Clang-DetermineCompilerInternal.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\Compaq-C-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\Cray-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\Embarcadero-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\Fujitsu-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\GHS-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\GNU-C-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\HP-C-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\HP-CXX-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\IAR-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\Intel-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\LCC-C-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\MSVC-C.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\MSVC-CXX.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\MSVC-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\MSVC.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\NVHPC-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\NVIDIA-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\PGI-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\PathScale-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\SCO-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\SDCC-C-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\SunPro-C-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\TI-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\Tasking-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\Watcom-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\XL-C-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\XL-CXX-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\XLClang-C-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\zOS-C-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Internal\FeatureTesting.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Platform\Windows-Determine-CXX.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Platform\Windows-MSVC-C.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Platform\Windows-MSVC.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Platform\Windows.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.25.2\CMakeCCompiler.cmake CMakeFiles\3.25.2\CMakeCXXCompiler.cmake CMakeFiles\3.25.2\CMakeRCCompiler.cmake CMakeFiles\3.25.2\CMakeSystem.cmake E$:\Projects\XLThermo.Data\CMakeLists.txt E$:\Projects\XLThermo.Data\deps\CMakeLists.txt E$:\Projects\XLThermo.Data\deps\xll\CMakeLists.txt
+build build.ninja: RERUN_CMAKE | C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\BasicConfigVersion-SameMajorVersion.cmake.in C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeCInformation.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeCXXInformation.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeCommonLanguageInclude.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeDependentOption.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeGenericSystem.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeInitializeConfigs.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeLanguageInformation.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakePackageConfigHelpers.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeRCInformation.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeSystemSpecificInformation.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeSystemSpecificInitialize.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CTest.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CTestTargets.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CTestUseLaunchers.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\MSVC-C.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\MSVC-CXX.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\MSVC.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\DartConfiguration.tcl.in C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\ExternalProject.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\FetchContent.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\FetchContent\CMakeLists.cmake.in C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\FindGit.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\FindPackageHandleStandardArgs.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\FindPackageMessage.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\GNUInstallDirs.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Platform\Windows-MSVC-C.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Platform\Windows-MSVC.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Platform\Windows.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Platform\WindowsPaths.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles\3.25.2\CMakeCCompiler.cmake CMakeFiles\3.25.2\CMakeCXXCompiler.cmake CMakeFiles\3.25.2\CMakeRCCompiler.cmake CMakeFiles\3.25.2\CMakeSystem.cmake E$:\Projects\PCData\CMakeLists.txt E$:\Projects\PCData\PCData\CMakeLists.txt E$:\Projects\PCData\demo\CMakeLists.txt E$:\Projects\XLThermo.Data\CMakeLists.txt E$:\Projects\XLThermo.Data\deps\CMakeLists.txt E$:\Projects\XLThermo.Data\deps\xll\CMakeLists.txt _deps\etl-build\CMakeFiles\git-data\grabRef.cmake _deps\etl-src\.git\HEAD _deps\etl-src\CMakeLists.txt _deps\etl-src\cmake\GetGitRevisionDescription.cmake _deps\etl-src\cmake\GetGitRevisionDescription.cmake.in _deps\etl-src\cmake\helpers.cmake _deps\json-src\CMakeLists.txt _deps\json-src\cmake\config.cmake.in _deps\json-src\cmake\nlohmann_jsonConfigVersion.cmake.in _deps\json-src\cmake\pkg-config.pc.in _deps\pugi-src\CMakeLists.txt _deps\pugi-src\scripts\pugixml-config.cmake.in _deps\pugi-src\scripts\pugixml.pc.in
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeCCompiler.cmake.in C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeCCompilerABI.c C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeCInformation.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeCXXCompiler.cmake.in C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeCXXCompilerABI.cpp C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeCXXInformation.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeCommonLanguageInclude.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeCompilerIdDetection.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeDetermineCCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeDetermineCXXCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeDetermineCompileFeatures.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeDetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeDetermineCompilerABI.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeDetermineCompilerId.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeDetermineRCCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeDetermineSystem.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeFindBinUtils.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeGenericSystem.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeInitializeConfigs.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeLanguageInformation.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeParseImplicitIncludeInfo.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeParseImplicitLinkInfo.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeParseLibraryArchitecture.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeRCCompiler.cmake.in C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeRCInformation.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeSystem.cmake.in C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeSystemSpecificInformation.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeSystemSpecificInitialize.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeTestCCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeTestCXXCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeTestCompilerCommon.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeTestRCCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\ADSP-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\ARMCC-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\ARMClang-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\AppleClang-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\Borland-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\Bruce-C-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\Clang-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\Clang-DetermineCompilerInternal.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\Compaq-C-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\Cray-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\Embarcadero-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\Fujitsu-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\GHS-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\GNU-C-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\HP-C-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\HP-CXX-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\IAR-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\Intel-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\LCC-C-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\MSVC-C.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\MSVC-CXX.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\MSVC-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\MSVC.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\NVHPC-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\NVIDIA-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\PGI-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\PathScale-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\SCO-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\SDCC-C-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\SunPro-C-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\TI-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\Tasking-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\Watcom-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\XL-C-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\XL-CXX-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\XLClang-C-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\zOS-C-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Internal\FeatureTesting.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Platform\Windows-Determine-CXX.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Platform\Windows-MSVC-C.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Platform\Windows-MSVC.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Platform\Windows.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.25.2\CMakeCCompiler.cmake CMakeFiles\3.25.2\CMakeCXXCompiler.cmake CMakeFiles\3.25.2\CMakeRCCompiler.cmake CMakeFiles\3.25.2\CMakeSystem.cmake E$:\Projects\XLThermo.Data\CMakeLists.txt E$:\Projects\XLThermo.Data\deps\CMakeLists.txt E$:\Projects\XLThermo.Data\deps\xll\CMakeLists.txt: phony
+build C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\BasicConfigVersion-SameMajorVersion.cmake.in C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeCInformation.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeCXXInformation.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeCommonLanguageInclude.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeDependentOption.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeGenericSystem.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeInitializeConfigs.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeLanguageInformation.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakePackageConfigHelpers.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeRCInformation.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeSystemSpecificInformation.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CMakeSystemSpecificInitialize.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CTest.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CTestTargets.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\CTestUseLaunchers.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\MSVC-C.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\MSVC-CXX.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Compiler\MSVC.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\DartConfiguration.tcl.in C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\ExternalProject.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\FetchContent.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\FetchContent\CMakeLists.cmake.in C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\FindGit.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\FindPackageHandleStandardArgs.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\FindPackageMessage.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\GNUInstallDirs.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Platform\Windows-MSVC-C.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Platform\Windows-MSVC.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Platform\Windows.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\Platform\WindowsPaths.cmake C$:\Users\Troldal\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9161.40\bin\cmake\win\x64\share\cmake-3.25\Modules\WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles\3.25.2\CMakeCCompiler.cmake CMakeFiles\3.25.2\CMakeCXXCompiler.cmake CMakeFiles\3.25.2\CMakeRCCompiler.cmake CMakeFiles\3.25.2\CMakeSystem.cmake E$:\Projects\PCData\CMakeLists.txt E$:\Projects\PCData\PCData\CMakeLists.txt E$:\Projects\PCData\demo\CMakeLists.txt E$:\Projects\XLThermo.Data\CMakeLists.txt E$:\Projects\XLThermo.Data\deps\CMakeLists.txt E$:\Projects\XLThermo.Data\deps\xll\CMakeLists.txt _deps\etl-build\CMakeFiles\git-data\grabRef.cmake _deps\etl-src\.git\HEAD _deps\etl-src\CMakeLists.txt _deps\etl-src\cmake\GetGitRevisionDescription.cmake _deps\etl-src\cmake\GetGitRevisionDescription.cmake.in _deps\etl-src\cmake\helpers.cmake _deps\json-src\CMakeLists.txt _deps\json-src\cmake\config.cmake.in _deps\json-src\cmake\nlohmann_jsonConfigVersion.cmake.in _deps\json-src\cmake\pkg-config.pc.in _deps\pugi-src\CMakeLists.txt _deps\pugi-src\scripts\pugixml-config.cmake.in _deps\pugi-src\scripts\pugixml.pc.in: phony
 
 
 #############################################

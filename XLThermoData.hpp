@@ -40,7 +40,7 @@ SOFTWARE.
 
 xll::AddIn xllCompData(
     // Return double, C++ name of function, Excel name.
-    xll::Function(XLL_LPOPER, "compData", "XLTHERMO.COMPDATA")
+    xll::Function(XLL_LPOPER, "compData", "XLT.COMPDATA")
         // Array of function arguments.
         .Arguments({ xll::Arg(XLL_LPOPER, "Name", "is the name of the component to get data for."),
                      xll::Arg(XLL_LPOPER, "Property", "is the name of the property to get.") })
