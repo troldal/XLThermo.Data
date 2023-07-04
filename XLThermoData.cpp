@@ -43,6 +43,52 @@ SOFTWARE.
 
 using namespace xll;
 
+xll::LPOPER compData(xll::LPOPER name, xll::LPOPER property) {
+#pragma XLLEXPORT
+
+    if (name->xltype & xltypeMissing) {
+        auto* result = new OPER();
+        result->xltype = xltypeErr | xlbitDLLFree;
+        result->val.err = xlerrNA;
+         return result;
+    }
+
+
+    auto theName =(name->xltype & xltypeMissing ? "" :  name->to_string());;
+        auto theProperty = (property->xltype & xltypeMissing ? "" :  property->to_string());
+
+    if (theProperty.empty()) {
+
+        auto* rng   = new OPER(3, 1);
+        rng->xltype = xltypeMulti | xlbitDLLFree;
+        (*rng)[0]   = OPER(3.14);
+        (*rng)[1]   = OPER(2.71);
+        (*rng)[2]   = OPER(1.41);
+        return rng;
+    }
+
+    if (theProperty == "MW") {
+        auto* result = new OPER(3.14);
+        result->xltype |= xlbitDLLFree;
+        return result;
+    }
+
+    if (theProperty == "Tc") {
+        auto* result = new OPER(2.71);
+        result->xltype |= xlbitDLLFree;
+        return result;
+    }
+
+    if (theProperty == "Pc") {
+        auto* result = new OPER(1.41);
+        result->xltype |= xlbitDLLFree;
+        return result;
+    }
+
+
+
+}
+
 // WINAPI calling convention must be specified
 _FPX* WINAPI xll_tgamma(double x)
 {

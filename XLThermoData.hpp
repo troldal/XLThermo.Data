@@ -38,6 +38,28 @@ SOFTWARE.
 
 #include <xll.h>
 
+xll::AddIn xllCompData(
+    // Return double, C++ name of function, Excel name.
+    xll::Function(XLL_LPOPER, "compData", "XLTHERMO.COMPDATA")
+        // Array of function arguments.
+        .Arguments({ xll::Arg(XLL_LPOPER, "Name", "is the name of the component to get data for."),
+                     xll::Arg(XLL_LPOPER, "Property", "is the name of the property to get.") })
+        // Function Wizard help.
+        .FunctionHelp("Get pure component properties for a given component.")
+        // Function Wizard category.
+        .Category("Engineering")
+        // URL linked to `Help on this function`.
+        .HelpTopic("https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/tgamma-tgammaf-tgammal"));
+
+// WINAPI calling convention must be specified
+xll::LPOPER WINAPI compData(xll::LPOPER name, xll::LPOPER property);
+
+
+
+
+// =============================================================================
+// XLL.TGAMMA
+// =============================================================================
 xll::AddIn xai_tgamma2(
     // Return double, C++ name of function, Excel name.
     xll::Function(XLL_DOUBLE, "xll_tgamma", "TROLDAL.TGAMMA2", false)
@@ -53,7 +75,9 @@ xll::AddIn xai_tgamma2(
 // WINAPI calling convention must be specified
 _FPX* WINAPI xll_tgamma(double x);
 
-
+// =============================================================================
+// XLL.TGAMMA2
+// =============================================================================
 xll::AddIn xai_tgamma(
     // Return double, C++ name of function, Excel name.
     xll::Function(XLL_LPOPER, "xll_tgamma2", "XLL.TGAMMA")
@@ -69,7 +93,9 @@ xll::AddIn xai_tgamma(
 // WINAPI calling convention must be specified
 xll::LPOPER WINAPI xll_tgamma2(double x);
 
-
+// =============================================================================
+// XLTHERMO.CMD.LOADCOMPLIST
+// =============================================================================
 // Press Alt-F8 then type 'XLL.MACRO' to call 'xll_macro'
 // See https://xlladdins.github.io/Excel4Macros/
 xll::AddIn xlmLoadComponentList(xll::Macro("loadComponentList", "XLTHERMO.CMD.LOADCOMPLIST"));
