@@ -5,6 +5,9 @@
 #ifndef XLTHERMO_DATA_DATABASE_HPP
 #define XLTHERMO_DATA_DATABASE_HPP
 
+#include <string>
+#include <vector>
+
 class Database final
 {
 public:
@@ -13,6 +16,16 @@ public:
         static Database db;    // The one, unique instance
         return db;
     }
+
+    std::vector<std::string> listNames() const;
+
+    std::vector<std::string> listCAS() const;
+
+    std::vector<std::string> listComponents() const;
+
+
+
+
 
 
 
