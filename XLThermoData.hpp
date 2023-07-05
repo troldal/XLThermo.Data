@@ -38,6 +38,9 @@ SOFTWARE.
 
 #include <xll.h>
 
+xll::Auto<xll::Open> myInit([]() { std::cerr << "Initializing...\n"; return 1; });
+xll::Auto<xll::Close> myShutdown([]() { std::cerr << "Shutting down...\n"; return 1; });
+
 xll::AddIn xllCompData(
     // Return double, C++ name of function, Excel name.
     xll::Function(XLL_LPOPER, "compData", "XLT.COMPDATA")
@@ -54,6 +57,20 @@ xll::AddIn xllCompData(
 // WINAPI calling convention must be specified
 xll::LPOPER WINAPI compData(xll::LPOPER name, xll::LPOPER property);
 
+xll::AddIn xllCompList(
+    // Return double, C++ name of function, Excel name.
+    xll::Function(XLL_LPOPER, "compList", "XLT.COMPLIST")
+        // Array of function arguments.
+        .Arguments({ xll::Arg(XLL_LPOPER, "Filter", "is the filter criteria to use.")})
+        // Function Wizard help.
+        .FunctionHelp("Get pure component properties for a given component.")
+        // Function Wizard category.
+        .Category("Engineering")
+        // URL linked to `Help on this function`.
+        .HelpTopic("https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/tgamma-tgammaf-tgammal"));
+
+// WINAPI calling convention must be specified
+xll::LPOPER WINAPI compList(xll::LPOPER filter);
 
 
 

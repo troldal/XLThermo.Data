@@ -58,6 +58,15 @@ build CMakeFiles\XLThermoData.dir\XLThermoData.cpp.obj: CXX_COMPILER__XLThermoDa
   TARGET_COMPILE_PDB = CMakeFiles\XLThermoData.dir\
   TARGET_PDB = XLThermo.Data.pdb
 
+build CMakeFiles\XLThermoData.dir\Database.cpp.obj: CXX_COMPILER__XLThermoData_Release E$:\Projects\XLThermo.Data\Database.cpp || cmake_object_order_depends_target_XLThermoData
+  DEFINES = -DXLThermoData_EXPORTS
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -MD /J /utf-8 -std:c++20
+  INCLUDES = -IE:\Projects\XLThermo.Data\cmake-build-release-visual-studio -IE:\Projects\XLThermo.Data\deps\xll\xll -IE:\Projects\XLThermo.Data\cmake-build-release-visual-studio\_deps\json-src\include -external:IE:\Projects\PCData\PCData -external:W0
+  OBJECT_DIR = CMakeFiles\XLThermoData.dir
+  OBJECT_FILE_DIR = CMakeFiles\XLThermoData.dir
+  TARGET_COMPILE_PDB = CMakeFiles\XLThermoData.dir\
+  TARGET_PDB = XLThermo.Data.pdb
+
 
 # =============================================================================
 # Link build statements for SHARED_LIBRARY target XLThermoData
@@ -66,7 +75,7 @@ build CMakeFiles\XLThermoData.dir\XLThermoData.cpp.obj: CXX_COMPILER__XLThermoDa
 #############################################
 # Link the shared library XLThermo.Data.xll
 
-build XLThermo.Data.xll XLThermo.Data.lib: CXX_SHARED_LIBRARY_LINKER__XLThermoData_Release CMakeFiles\XLThermoData.dir\XLThermoData.cpp.obj | E$:\Projects\XLThermo.Data\deps\xll\xll\x64\XLCALL32.LIB deps\xll\xll.lib _deps\pcdata-build\PCData\PCDataLib.lib _deps\pugi-build\pugixml.lib || _deps\pcdata-build\PCData\PCDataLib.lib _deps\pugi-build\pugixml.lib deps\xll\xll.lib
+build XLThermo.Data.xll XLThermo.Data.lib: CXX_SHARED_LIBRARY_LINKER__XLThermoData_Release CMakeFiles\XLThermoData.dir\XLThermoData.cpp.obj CMakeFiles\XLThermoData.dir\Database.cpp.obj | E$:\Projects\XLThermo.Data\deps\xll\xll\x64\XLCALL32.LIB deps\xll\xll.lib _deps\pcdata-build\PCData\PCDataLib.lib _deps\pugi-build\pugixml.lib || _deps\pcdata-build\PCData\PCDataLib.lib _deps\pugi-build\pugixml.lib deps\xll\xll.lib
   LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -MD
   LINK_FLAGS = /machine:x64 /INCREMENTAL:NO
   LINK_LIBRARIES = E:\Projects\XLThermo.Data\deps\xll\xll\x64\XLCALL32.LIB  deps\xll\xll.lib  _deps\pcdata-build\PCData\PCDataLib.lib  _deps\pugi-build\pugixml.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib

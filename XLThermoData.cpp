@@ -34,12 +34,12 @@ SOFTWARE.
 */
 
 #include "XLThermoData.hpp"
+#include <PCData.hpp>
 #include <iostream>
+#include <nlohmann/json.hpp>
 #include <tuple>
 #include <vector>
 #include <xll.h>
-#include <PCData.hpp>
-#include <nlohmann/json.hpp>
 
 using namespace xll;
 
@@ -80,14 +80,14 @@ xll::LPOPER compData(xll::LPOPER name, xll::LPOPER property)
     ::Excel12(xlFree, nullptr, 1, property);
 
     static const PCData db("./pcd.db");
-    nlohmann::json comp = nlohmann::json::parse(db.find(theName));
+    nlohmann::json      comp = nlohmann::json::parse(db.find(theName));
 
     if (theProperty.empty()) {
         auto* rng   = new OPER(3, 1);
         rng->xltype = xltypeMulti | xlbitDLLFree;
-        (*rng)[0]   = OPER(comp["MolecularWeight"]["Value"].get<double>());
-        (*rng)[1]   = OPER(comp["CriticalTemperature"]["Value"].get<double>());
-        (*rng)[2]   = OPER(comp["CriticalPressure"]["Value"].get<double>());
+        (*rng)[0]   = OPER(comp["MolecularWeight"]["Value"].get< double >());
+        (*rng)[1]   = OPER(comp["CriticalTemperature"]["Value"].get< double >());
+        (*rng)[2]   = OPER(comp["CriticalPressure"]["Value"].get< double >());
         return rng;
     }
 
@@ -108,6 +108,25 @@ xll::LPOPER compData(xll::LPOPER name, xll::LPOPER property)
         result->xltype |= xlbitDLLFree;
         return result;
     }
+}
+
+xll::LPOPER compList(xll::LPOPER filter)
+{
+#pragma XLLEXPORT
+
+    static const PCData db("./pcd.db");
+    auto names = db.names();
+    //nlohmann::json      comps = nlohmann::json::parse(db.list());
+
+    auto* rng   = new OPER(names.size(), 1);
+    rng->xltype = xltypeMulti | xlbitDLLFree;
+
+    int i = 0;
+    for (auto& name : names) {
+        (*rng)[i] = OPER(name.c_str());
+        ++i;
+    }
+    return rng;
 }
 
 // WINAPI calling convention must be specified
