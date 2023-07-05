@@ -46,7 +46,9 @@ add_library(
         XLThermoData
         SHARED
         ${CMAKE_CURRENT_SOURCE_DIR}/XLThermoData.cpp
-        Database.cpp Database.hpp)
+        Database.hpp
+        CompProperties.hpp
+        CompCorrelations.hpp)
 
 #==============================================================================
 # Set Xll library properties and compile options
